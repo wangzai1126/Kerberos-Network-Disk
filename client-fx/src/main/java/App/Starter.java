@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.net.URL;
 
 public class Starter extends Application {
+    //test
     Scene Login_Scene;//登录
     Scene EC_Scene;//加解密展示
     private static Scene current_Scene;//当前
