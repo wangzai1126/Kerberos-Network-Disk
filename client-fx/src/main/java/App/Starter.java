@@ -28,6 +28,7 @@ public class Starter extends Application {
         //test2
         //log
         logger.debug("打开程序");
+        logger.debug("测试");
         //登录窗口
         Login_Scene = new Scene(loadFXML("Login"));
         current_Scene = Login_Scene;

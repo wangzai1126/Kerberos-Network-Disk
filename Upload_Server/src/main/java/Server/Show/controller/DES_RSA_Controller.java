@@ -176,7 +176,7 @@ public class DES_RSA_Controller implements Initializable {
         if(encrypted_Text.length() >= 400) {
             Label label2 = new Label();
             label2.setFont(default_Show_Font);
-            if(encrypted_Text.length() >= 400)
+            if(encrypted_Text.length() >= 600)
                 label2.setText("  \t" + encrypted_Text.substring(400, 600));
             else label2.setText("  \t" + encrypted_Text.substring(400, encrypted_Text.length()));
             label2.setLayoutX(fixed_X);
