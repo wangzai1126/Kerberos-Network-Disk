@@ -319,7 +319,7 @@
                                        AnchorPane.topAnchor="60.0"/>
                                 <!--<Label fx:id="search_IMG_Label" layoutX="917.0" layoutY="60.0" onMouseClicked="#search_Label_Clicked" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="60.0" />-->
                                 <Label fx:id="update_IMG_Label" onMouseClicked="#update_Label_Clicked"
-                                       AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="60.0"/>
+                                       AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="60.0"/>
                                 <ScrollPane fx:id="show_File_ScrollPane" layoutX="43.0" layoutY="118.0"
                                             prefHeight="604.0" prefWidth="974.0"
                                             style="-fx-border-color: #ffffff; -fx-background: #ffffff;"
