@@ -19,6 +19,7 @@ public class datatest {
         Connection conn = null;
         Statement stmt = null;
         System.out.println("1");
+        System.out.println("2");
         try{
             // 注册 JDBC 驱动
             Class.forName(JDBC_DRIVER);
