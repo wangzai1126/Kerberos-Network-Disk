@@ -20,6 +20,7 @@ public class datatest {
         Statement stmt = null;
         System.out.println("1");
         System.out.println("2");
+        System.out.println("3");
         try{
             // 注册 JDBC 驱动
             Class.forName(JDBC_DRIVER);
