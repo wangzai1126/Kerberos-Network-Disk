@@ -25,6 +25,7 @@ public class Starter extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+        //test2
         //log
         logger.debug("打开程序");
         //登录窗口
