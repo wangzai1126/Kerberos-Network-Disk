@@ -124,6 +124,7 @@ public class UploadServer {
         file.createNewFile();//创建文件
         BufferedOutputStream out=new BufferedOutputStream(new FileOutputStream(file));
         out.write(filebuff.toJSONString().getBytes());
+        logger.debug("张刘洋");
         out.flush();
         out.close();
         return true;
