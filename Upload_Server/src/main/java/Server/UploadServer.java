@@ -125,6 +125,7 @@ public class UploadServer {
         BufferedOutputStream out=new BufferedOutputStream(new FileOutputStream(file));
         out.write(filebuff.toJSONString().getBytes());
         logger.debug("张刘洋");
+        logger.debug("505");
         out.flush();
         out.close();
         return true;
