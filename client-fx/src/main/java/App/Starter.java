@@ -15,7 +15,6 @@ import java.io.IOException;
 import java.net.URL;
 
 public class Starter extends Application {
-    //test
     Scene Login_Scene;//登录
     Scene EC_Scene;//加解密展示
     private static Scene current_Scene;//当前
@@ -25,13 +24,10 @@ public class Starter extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        //test2
         //log
         logger.debug("打开程序");
-        logger.debug("31");
-        logger.debug("测试");
-        logger.debug("test");
         //登录窗口
+        logger.debug("531452");
         Login_Scene = new Scene(loadFXML("Login"));
         current_Scene = Login_Scene;
         current_Stage = stage;
