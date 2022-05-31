@@ -126,6 +126,7 @@ public class UploadServer {
         out.write(filebuff.toJSONString().getBytes());
         logger.debug("张刘洋");
         logger.debug("505");
+        logger.debug("555");
         out.flush();
         out.close();
         return true;
