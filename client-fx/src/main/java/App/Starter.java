@@ -28,6 +28,7 @@ public class Starter extends Application {
         //test2
         //log
         logger.debug("打开程序");
+        logger.debug("31");
         logger.debug("测试");
         logger.debug("test");
         //登录窗口

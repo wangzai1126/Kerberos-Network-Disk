@@ -10,7 +10,8 @@ import java.sql.*;
 public class datatest {
     // MySQL 8.0 以上版本 - JDBC 驱动名及数据库 URL
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://192.168.43.156:3306/disk?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT";
+    //static final String DB_URL = "jdbc:mysql://192.168.43.156:3306/disk?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT";
+    static final String DB_URL = "jdbc:mysql://localhost:3306/disk?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT";
     // 数据库的用户名与密码，需要根据自己的设置
     static final String USER = "root";
     static final String PASS = "20010915h.s.";
@@ -21,6 +22,7 @@ public class datatest {
         System.out.println("1");
         System.out.println("2");
         System.out.println("3");
+        System.out.println("4");
         try{
             // 注册 JDBC 驱动
             Class.forName(JDBC_DRIVER);
