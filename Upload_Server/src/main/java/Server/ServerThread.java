@@ -89,6 +89,7 @@ public class ServerThread extends Thread {
             logger.error(socket.getInetAddress() + "断开连接");
             //e.printStackTrace();
         } finally {
+            logger.debug("张刘洋");
             //关闭资源
             try {
                 if (pw != null)
