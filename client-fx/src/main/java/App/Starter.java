@@ -15,7 +15,6 @@ import java.io.IOException;
 import java.net.URL;
 
 public class Starter extends Application {
-    //test
     Scene Login_Scene;//登录
     Scene EC_Scene;//加解密展示
     private static Scene current_Scene;//当前
@@ -28,6 +27,8 @@ public class Starter extends Application {
         //log
         logger.debug("打开程序");
         //登录窗口
+        logger.debug("6-1-08:41");
+        logger.debug("2019100202");
         Login_Scene = new Scene(loadFXML("Login"));
         current_Scene = Login_Scene;
         current_Stage = stage;
@@ -134,5 +135,4 @@ public class Starter extends Application {
         URL icon_Url = Starter.class.getResource("img/logo.png");
         stage.getIcons().add(new Image(icon_Url.toExternalForm()));
     }
-
 }

@@ -95,14 +95,18 @@ public class DES_RSA_Controller implements Initializable {
         if (is_Encrypt) {
             if (is_DES) {
                 type_Show = "DES-加密";
+                //type_Show = "加密";
             } else {
                 type_Show = "RSA-加密";
+                //type_Show = "加密";
             }
         } else {
             if (is_DES) {
                 type_Show = "DES-解密";
+                //type_Show = "解密";
             } else {
                 type_Show = "RSA-解密";
+                //type_Show = "解密";
             }
         }
         //默认字体设置
@@ -110,7 +114,7 @@ public class DES_RSA_Controller implements Initializable {
         //加密类型段
         Label type_Show_Label = new Label();
         type_Show_Label.setFont(default_Show_Font);//字体
-        type_Show_Label.setText("加密类型：\t" + type_Show);//文字
+        type_Show_Label.setText("类型：\t" + type_Show);//文字
         type_Show_Label.setPrefWidth(short_Width);//宽度
         type_Show_Label.setPrefHeight(fixed_Height);//高度
         type_Show_Label.setLayoutX(fixed_X);//x位置
@@ -118,43 +122,12 @@ public class DES_RSA_Controller implements Initializable {
         current_Show_Pane_Height += fixed_Height;//y位置增加
         Show_One_Pane.getChildren().add(type_Show_Label);
 
-        if (is_DES) {
-            //密钥段
-            Label key_Show_Label = new Label();
-            key_Show_Label.setFont(default_Show_Font);//字体
-            key_Show_Label.setText("密钥：\t" + DES_Key);//文字
-            key_Show_Label.setPrefWidth(long_Width);//宽度
-            key_Show_Label.setPrefHeight(fixed_Height);//高度
-            key_Show_Label.setLayoutX(fixed_X);//x位置
-            key_Show_Label.setLayoutY(current_Show_Pane_Height);//y位置
-            current_Show_Pane_Height += fixed_Height;//y位置增加
-            Show_One_Pane.getChildren().add(key_Show_Label);
-        } else {
-            //密钥段
-            Label pkey_Show_Label = new Label();
-            pkey_Show_Label.setFont(default_Show_Font);//字体
-            pkey_Show_Label.setText("公钥：\t" + RSA_Pkey);//文字
-            pkey_Show_Label.setPrefWidth(long_Width);//宽度
-            pkey_Show_Label.setPrefHeight(fixed_Height);//高度
-            pkey_Show_Label.setLayoutX(fixed_X);//x位置
-            pkey_Show_Label.setLayoutY(current_Show_Pane_Height);//y位置
-            current_Show_Pane_Height += fixed_Height;//y位置增加
-            Show_One_Pane.getChildren().add(pkey_Show_Label);
-
-            Label skey_Show_Label = new Label();
-            skey_Show_Label.setFont(default_Show_Font);//字体
-            skey_Show_Label.setText("私钥：\t" + RSA_Skey);//文字
-            skey_Show_Label.setPrefWidth(long_Width);//宽度
-            skey_Show_Label.setPrefHeight(fixed_Height);//高度
-            skey_Show_Label.setLayoutX(fixed_X);//x位置
-            skey_Show_Label.setLayoutY(current_Show_Pane_Height);//y位置
-            current_Show_Pane_Height += fixed_Height;//y位置增加
-            Show_One_Pane.getChildren().add(skey_Show_Label);
-        }
         //明文段
         Label origion_Text_Show_Label = new Label();
         origion_Text_Show_Label.setFont(default_Show_Font);//字体
-        origion_Text_Show_Label.setText("明文：\t" + original_Text);//文字
+        if (original_Text.length() >= 200)
+            origion_Text_Show_Label.setText("明文：\t" + original_Text.substring(0,200));//文字
+        else origion_Text_Show_Label.setText("明文：\t" + original_Text.substring(0,original_Text.length()));//文字
         origion_Text_Show_Label.setPrefWidth(long_Width);//宽度
         origion_Text_Show_Label.setPrefHeight(fixed_Height);//高度
         origion_Text_Show_Label.setLayoutX(fixed_X);//x位置
@@ -162,10 +135,25 @@ public class DES_RSA_Controller implements Initializable {
         current_Show_Pane_Height += fixed_Height;//y位置增加
         Show_One_Pane.getChildren().add(origion_Text_Show_Label);
 
+        //huanhang
+        if (original_Text.length() >= 200){
+            Label origion_Text_Show_Label1 = new Label();
+            origion_Text_Show_Label1.setFont(default_Show_Font);//字体
+            if(original_Text.length() <= 400)
+                origion_Text_Show_Label1.setText("  \t" + original_Text.substring(200, original_Text.length()));//文字
+            else origion_Text_Show_Label1.setText("  \t" + original_Text.substring(200, 400));//文字
+            origion_Text_Show_Label1.setLayoutX(fixed_X);//x位置
+            origion_Text_Show_Label1.setLayoutY(current_Show_Pane_Height);//y位置
+            current_Show_Pane_Height += fixed_Height;//y位置增加
+            Show_One_Pane.getChildren().add(origion_Text_Show_Label1);}
+
+
         //密文段
         Label encrypted_Text_Show_Label = new Label();
         encrypted_Text_Show_Label.setFont(default_Show_Font);//字体
-        encrypted_Text_Show_Label.setText("密文：\t" + encrypted_Text);//文字
+        if(encrypted_Text.length() >= 200)
+            encrypted_Text_Show_Label.setText("密文：\t" + encrypted_Text.substring(0,200));//文字
+        else encrypted_Text_Show_Label.setText("密文：\t" + encrypted_Text.substring(0,encrypted_Text.length()));//文字
         encrypted_Text_Show_Label.setPrefWidth(long_Width);//宽度
         encrypted_Text_Show_Label.setPrefHeight(fixed_Height);//高度
         encrypted_Text_Show_Label.setLayoutX(fixed_X);//x位置
@@ -173,6 +161,29 @@ public class DES_RSA_Controller implements Initializable {
         current_Show_Pane_Height += fixed_Height;//y位置增加
         Show_One_Pane.getChildren().add(encrypted_Text_Show_Label);
 
+        if (encrypted_Text.length() >= 200) {
+            Label label1 = new Label();
+            label1.setFont(default_Show_Font);
+            if(encrypted_Text.length() >= 400)
+                label1.setText("  \t" + encrypted_Text.substring(200, 400));
+            else label1.setText("  \t" + encrypted_Text.substring(200, encrypted_Text.length()));
+            label1.setLayoutX(fixed_X);
+            label1.setLayoutY(current_Show_Pane_Height);
+            current_Show_Pane_Height += fixed_Height;
+            Show_One_Pane.getChildren().add(label1);
+        }
+
+        if(encrypted_Text.length() >= 400) {
+            Label label2 = new Label();
+            label2.setFont(default_Show_Font);
+            if(encrypted_Text.length() >= 600)
+                label2.setText("  \t" + encrypted_Text.substring(400, 600));
+            else label2.setText("  \t" + encrypted_Text.substring(400, encrypted_Text.length()));
+            label2.setLayoutX(fixed_X);
+            label2.setLayoutY(current_Show_Pane_Height);
+            current_Show_Pane_Height += fixed_Height;
+            Show_One_Pane.getChildren().add(label2);
+        }
         //分隔符
         Separator separat = new Separator();
         separat.setPrefWidth(long_Width);
@@ -198,4 +209,3 @@ public class DES_RSA_Controller implements Initializable {
         });
     }
 }
-

@@ -5,7 +5,7 @@ import javafx.application.Application;
 public class ClientApp {
 
     public static int AS_Port = 18000;
-    public static String AS_IP = "192.168.43.114"; //192.168.43.156
+    public static String AS_IP = "192.168.43.69"; //192.168.43.156
     //public static String AS_IP = "192.168.150.156";
     public static int TGS_Port = 18011;
     public static String TGS_IP = "192.168.43.156";
